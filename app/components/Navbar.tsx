@@ -10,9 +10,9 @@ export default function Navbar() {
 
   const navigation = [
     { name: 'About me', href: '/' },
-    { name: 'Journey', href: '/journey' },
-    { name: 'Learnings', href: '/learnings' },
-    { name: 'Contact me', href: '/contact' },
+    { name: 'Journey', href: '/journey/' },
+    { name: 'Learnings', href: '/learnings/' },
+    { name: 'Contact me', href: '/contact/' },
   ]
 
   return (
@@ -107,4 +107,4 @@ export default function Navbar() {
       </div>
     </nav>
   )
-} 
+}
