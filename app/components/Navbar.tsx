@@ -37,7 +37,7 @@ export default function Navbar() {
                   pathname === item.href
                     ? 'text-forest-green'
                     : 'text-gray-600 hover:text-forest-green'
-                } transition-colors duration-200`}
+                } hover-link transition-custom`}
               >
                 {item.name}
               </Link>

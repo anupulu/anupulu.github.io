@@ -2,6 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .transition-custom {
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-0.25rem);
+    transition-property: transform;
+    transition-duration: 300ms;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+    transition-property: transform;
+    transition-duration: 300ms;
+  }
+  
+  .hover-card {
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  
+  .hover-card:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    border-color: rgba(47, 79, 79, 0.2);
+    background-image: linear-gradient(to bottom right, white, rgba(143, 188, 143, 0.05));
+  }
+  
+  .hover-link {
+    position: relative;
+  }
+  
+  .hover-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #2F4F4F;
+    transition: width 300ms ease-in-out;
+  }
+  
+  .hover-link:hover::after {
+    width: 100%;
+  }
+  
+  .hover-button {
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  
+  .hover-button:hover {
+    background-color: rgba(47, 79, 79, 0.9);
+    box-shadow: 0 0 0 2px rgba(47, 79, 79, 0.2);
+  }
+  
+  .hover-button:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Add page transition */
+.page-transition {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

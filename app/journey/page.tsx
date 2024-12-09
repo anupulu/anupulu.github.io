@@ -338,7 +338,7 @@ export default function JourneyPage() {
               {/* Card - alternating sides on desktop */}
               <div className={`relative ml-20 md:ml-0 ${index % 2 === 0 ? 'md:mr-[50%] md:pr-12' : 'md:ml-[50%] md:pl-12'}`}>
                 <Card 
-                  className="p-6 bg-white border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-md"
+                  className="p-6 bg-white border border-gray-100 hover-card"
                 >
                   <div className="space-y-3">
                     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">

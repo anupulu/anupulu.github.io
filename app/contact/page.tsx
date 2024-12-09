@@ -1,18 +1,24 @@
+'use client'
+
 import { Card } from "@/components/ui/card"
-import { LinkedinIcon, MailIcon } from "lucide-react"
+import { 
+  Linkedin,
+  Mail,
+  Github
+} from "lucide-react"
 
 export default function ContactPage() {
   const contactMethods = [
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/anujohanna",
-      icon: <LinkedinIcon className="w-6 h-6" />,
+      icon: <Linkedin className="w-6 h-6" />,
       description: "Connect with me professionally and follow my journey"
     },
     {
       name: "Email",
       url: "mailto:anu.ylanen@gmail.com",
-      icon: <MailIcon className="w-8 h-8 text-forest-green" />,
+      icon: <Mail className="w-8 h-8 text-forest-green" />,
       description: "Send me a message directly at anu.ylanen@gmail.com"
     }
   ]
