@@ -5,8 +5,8 @@ export default function ContactPage() {
   const contactMethods = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/anupulu/",
-      icon: <LinkedinIcon className="w-8 h-8 text-forest-green" />,
+      url: "https://www.linkedin.com/in/anujohanna",
+      icon: <LinkedinIcon className="w-6 h-6" />,
       description: "Connect with me professionally and follow my journey"
     },
     {
