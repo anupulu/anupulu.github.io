@@ -46,7 +46,7 @@ export default function LearningsPage() {
     },
     {
       title: "Kiwix: Making Knowledge Accessible",
-      date: "2023 - Present",
+      date: "2024 - Present",
       type: "volunteering",
       description: "Volunteering with Kiwix to support their mission of making knowledge accessible to everyone, regardless of internet connectivity.",
       insights: [
