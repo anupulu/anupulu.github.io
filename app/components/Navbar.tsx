@@ -9,7 +9,8 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigation = [
-    { name: 'About me', href: '/' },
+    { name: 'Home', href: '/' },
+    { name: 'About me', href: '/about/' },
     { name: 'Journey', href: '/journey/' },
     { name: 'Learnings', href: '/learnings/' },
     { name: 'Contact me', href: '/contact/' },
