@@ -32,7 +32,7 @@ export default function JourneyPage() {
       organization: "Kiwix",
       role: "Volunteer",
       description: "Supporting Kiwix to make knowledge accessible offline, contributing to their mission of bringing educational content to areas with limited internet access.",
-      category: "beyond-work"
+      category: "beyond-work",
       details: [
         "Assisting with WordPress site tweaks and improvements",
         "Setting up newsletter and fundraising campaigns, and automation funnels"
