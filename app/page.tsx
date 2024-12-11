@@ -6,12 +6,12 @@ export default function Home() {
   const keyAreas = [
     {
       title: "My Journey So Far",
-      description: "Built products that helped Batmaid combat undeclared domestic cleaning work, growing from Swiss roots into a multi-country European scaleup.",
+      description: "Built products and features that helped Batmaid combat undeclared domestic cleaning work, growing from Swiss roots into a multi-country European scaleup.",
       colorClass: "text-muted-terracotta"
     },
     {
       title: "Where I Am Now",
-      description: "Taking time to learn, grow, and give back. Volunteering at tech events, achieving 2nd place in #herHACK with my team, and exploring new skills through courses and community engagement.",
+      description: "Taking time to learn, grow, and give back. Volunteering at a non-profit, tech events, achieving 2nd place in #herHACK with my team, and exploring new skills through courses and community engagement.",
       colorClass: "text-sage-green"
     },
     {
@@ -43,12 +43,12 @@ export default function Home() {
       description: "I value and seek out varied viewpoints to drive better solutions."
     },
     {
-      principle: "Sustainable solutions over quick fixes",
-      description: "I aim for lasting impact rather than temporary patches."
+      principle: "Transparency and honesty over opacity",
+      description: "I communicate openly and honestly, building trust through clear and transparent processes."
     },
     {
       principle: "Empathy and understanding over assumptions",
-      description: "I strive to deeply understand users and their contexts before designing solutions."
+      description: "I dedicate time to truly understanding user needs and contexts, ensuring the solutions I design are grounded in real human experiences."
     },
     {
       principle: "Collaborative growth over individual success",
