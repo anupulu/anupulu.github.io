@@ -19,10 +19,36 @@ type Learning = {
 export default function LearningsPage() {
   const learnings: Learning[] = [
     {
+      title: "Creation of Personal Website Using AI Tools",
+      date: "December 2024",
+      type: "project",
+      description: "Built this personal website using AI tools such as Claude.ai and Cursor AI coding assistant. Leveraged these tools to streamline the development process, enhance productivity, and implement design best practices.",
+      insights: [
+        "AI tools can significantly accelerate the web development process.",
+        "Combining multiple AI tools can create a more efficient and streamlined workflow.",
+        "Using AI for coding assistance can empower those who are less technical or are lacking coding skills.",
+        "AI can assist in both the backend logic and frontend design aspects of web development."
+      ],
+      relatedManifestoPrinciples: [
+        "Continuous learning over stagnation"
+      ],
+      links: [
+        {
+          text: "Claude.ai Official Website",
+          url: "https://www.claude.ai"
+        },
+        {
+          text: "Cursor AI Coding Assistant",
+          url: "https://www.cursor.com"
+        }
+      ],
+      tags: ["AI", "Web Development", "Productivity", "Innovation"]
+    },
+    {
       title: "#herHACK 2024: Sustainability Challenge",
       date: "November 2024",
       type: "project",
-      description: "Participated in #herHACK hackathon, where our team won 2nd place by developing a solution for SBB's sustainability challenge. The experience was both as a participant and volunteer, providing unique insights from multiple perspectives.",
+      description: "Participated in #herHACK hackathon, where our team won 2nd place by developing a solution for SBB's sustainability challenge. The experience was both as a participant and volunteer, providing insights on rapid innovation and community building.",
       insights: [
         "Cross-functional teams can rapidly innovate when given clear constraints and support",
         "Sustainability in tech requires balancing immediate user needs with long-term environmental impact",
@@ -180,4 +206,4 @@ export default function LearningsPage() {
       </section>
     </main>
   )
-} 
+}
