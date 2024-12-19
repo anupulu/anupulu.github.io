@@ -12,7 +12,7 @@ export default function AboutPage() {
   const skills: Skill[] = [
     {
       title: "Product Leadership",
-      description: "Scaled product strategy from startup to international scaleup, developing and rolling out a mobile app for 1,000+ cleaning professionals that transformed service delivery."
+      description: "Led product development initiatives at Batmaid, using agile methodologies, OKRs, data, and user feedback to achieve business goals and deliver impactful outcomes."
     },
     {
       title: "Service Design",
@@ -28,7 +28,7 @@ export default function AboutPage() {
     },
     {
       title: "Data-Informed Decision Making",
-      description: "Advanced product development through OKRs, opportunity solution mapping and minimum viable experiments, systematically validating product hypotheses and prioritizing high-impact initiatives."
+      description: "Collaborated with design, data, and engineering to extract key insights from data and user research, mapping opportunity solution spaces to inform product strategy and prioritize high-impact initiatives."
     },
     {
       title: "Empathetic Collaboration",
