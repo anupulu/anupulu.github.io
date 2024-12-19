@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-A modern, accessible portfolio website built with Next.js, React, and Tailwind CSS.
+This repository hosts the code for my personal portfolio website, showcasing my skills and experience in building a website entirely with an AI coding assistant, without writing any line of code myself. It features a modern and accessible design built with Next.js, React, and Tailwind CSS.
 
 ## Features
 
@@ -12,6 +12,8 @@ A modern, accessible portfolio website built with Next.js, React, and Tailwind C
 
 ## Tech Stack
 
+- Claude.ai for iterating the requirements
+- Cursor AI Code Assistant
 - Next.js 14
 - React 18
 - TypeScript
