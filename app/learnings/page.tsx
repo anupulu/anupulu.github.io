@@ -26,8 +26,7 @@ export default function LearningsPage() {
       insights: [
         "AI tools can significantly accelerate the web development process.",
         "Combining multiple AI tools can create a more efficient and streamlined workflow.",
-        "Using AI for coding assistance can empower those who are less technical or are lacking coding skills.",
-        "AI can assist in both the backend logic and frontend design aspects of web development."
+        "Using AI for coding assistance can empower those who are less technical or are lacking coding skills."
       ],
       relatedManifestoPrinciples: [
         "Continuous learning over stagnation"
