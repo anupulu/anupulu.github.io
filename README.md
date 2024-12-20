@@ -20,26 +20,6 @@ This repository hosts the code for my personal portfolio website, showcasing my 
 - Tailwind CSS
 - Radix UI Components
 
-## Getting Started
-
-1. Clone the repository:
-```bash
-git clone https://github.com/anupulu/anupulu.github.io.git
-cd anupulu.github.io
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
 ## Deployment
 
 This site is configured for deployment on GitHub Pages. To deploy:
