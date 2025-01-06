@@ -1,6 +1,7 @@
-import { Card } from "@/components/ui/card"
-import Link from 'next/link'
-import { cn } from "@/lib/utils"
+import Script from 'next/script';
+import { Card } from "@/components/ui/card";
+import Link from 'next/link';
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const keyAreas = [
@@ -19,7 +20,7 @@ export default function Home() {
       description: "Seeking my next mission where I can create sustainable, ethical technology solutions that make a meaningful impact on society.",
       colorClass: "text-forest-green"
     }
-  ]
+  ];
 
   const manifestoItems = [
     {
@@ -54,10 +55,15 @@ export default function Home() {
       principle: "Collaborative growth over individual success",
       description: "I believe in the power of teamwork and shared achievements."
     }
-  ]
+  ];
 
   return (
     <>
+      <Script
+        defer
+        data-domain="anupulu.github.io"
+        src="https://plausible.io/js/script.js"
+      />
       {/* Hero Section */}
       <section 
         className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-sage-green/5 to-muted-terracotta/5"
@@ -137,7 +143,7 @@ export default function Home() {
                 'text-muted-terracotta/25',
                 'text-forest-green/20',
                 'text-sage-green/30'
-              ]
+              ];
               
               return (
                 <Card 
@@ -166,6 +172,5 @@ export default function Home() {
         </div>
       </section>
     </>
-  )
+  );
 }
-
