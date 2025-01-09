@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
-import Head from 'next/head'
 import './globals.css'
 import Navbar from './components/Navbar'
 
@@ -50,9 +49,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" type="image/png" href="/sprout.png" />
-      </Head>
       <body>
         <Navbar />
         {children}
