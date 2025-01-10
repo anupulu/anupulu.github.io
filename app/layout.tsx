@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
+import FeedbackButton from '@/components/FeedbackButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -52,6 +53,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <FeedbackButton />
       </body>
     </html>
   )
