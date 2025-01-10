@@ -79,7 +79,7 @@ export default function ContactPage() {
         {/* Feedback Form */}
         <div>
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-forest-green text-center">
-            Website Feedback
+            Website Feedback - coming soon :)
           </h2>
           <FeedbackForm />
         </div>
