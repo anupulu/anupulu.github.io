@@ -9,9 +9,22 @@ export default function FeedbackForm() {
   const [feedbackType, setFeedbackType] = useState<FeedbackType>('bug')
   const [description, setDescription] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log({ feedbackType, description })
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ feedbackType, description }),
+      })
+      if (!response.ok) throw new Error('Failed to submit feedback')
+      // Handle successful submission
+    } catch (error) {
+      console.error('Error submitting feedback:', error)
+      // Handle error
+    }
   }
 
   return (
@@ -71,4 +84,4 @@ export default function FeedbackForm() {
       </form>
     </Card>
   )
-} 
+}
