@@ -1,62 +1,32 @@
-import React from 'react'
-import type { Metadata, Viewport } from 'next'
+'use client';
+
+import React, { useEffect } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import FeedbackButton from '@/components/FeedbackButton'
+import { usePathname } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NODE_ENV === 'production'
-      ? 'https://your-website.com'
-      : 'http://localhost:3000'
-  ),
-  title: 'Anu Ylänen',
-  description: 'Digital gardener, growing good. Product leader with a passion for creating meaningful, user-centered experiences.',
-  keywords: ['Product Management', 'UX Design', 'Digital Product', 'Switzerland', 'Product Leader'],
-  authors: [{ name: 'Anu Ylänen' }],
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://anupulu.github.io',
-    title: 'Anu Ylänen',
-    description: 'Digital gardener, growing good. Product leader with a passion for creating meaningful, user-centered experiences.',
-    siteName: 'Anu Ylänen'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Anu Ylänen',
-    description: 'Digital gardener, growing good. Product leader with a passion for creating meaningful, user-centered experiences.'
-  },
-  robots: {
-    index: true,
-    follow: true
-  }
-}
-
-export const viewport: Viewport = {
-  themeColor: '#2C5530',
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5
-}
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    console.log('Current pathname:', pathname);
+  }, [pathname]);
+
   return (
     <html lang="en">
       <body>
         <Navbar />
         {children}
-        <FeedbackButton />
+        {pathname !== '/contact/' && <FeedbackButton />}
       </body>
     </html>
   )
 }
-
-

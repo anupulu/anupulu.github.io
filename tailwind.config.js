@@ -10,10 +10,8 @@ module.exports = {
       colors: {
         'forest-green': '#2F4F4F',
         'sage-green': '#8FBC8F',
+        'muted-terracotta': '#E2725B',
         'text-dark': '#333333',
-        'muted-terracotta': {
-        500: '#E2725B',
-        700: '#B85642',
       },
     },
   },
