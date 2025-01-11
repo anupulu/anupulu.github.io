@@ -1,0 +1,24 @@
+name: Sync Feedback
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight
+  workflow_dispatch:      # Manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm install @octokit/rest
+        
+      - name: Sync feedback
+        run: node .github/scripts/sync-feedback.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

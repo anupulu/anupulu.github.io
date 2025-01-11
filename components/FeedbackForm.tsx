@@ -4,26 +4,47 @@ import { useState } from 'react'
 import { Card } from "@/components/ui/card"
 
 type FeedbackType = 'bug' | 'idea'
+type Status = 'idle' | 'loading' | 'success' | 'error'
+
+interface FeedbackItem {
+  type: FeedbackType;
+  description: string;
+  timestamp: string;
+  status: 'pending' | 'synced';
+}
 
 export default function FeedbackForm() {
   const [feedbackType, setFeedbackType] = useState<FeedbackType>('bug')
   const [description, setDescription] = useState('')
+  const [status, setStatus] = useState<Status>('idle')
+  const [error, setError] = useState('')
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (!description.trim()) {
+      setError('Please provide a description')
+      return
+    }
+
     try {
-      const response = await fetch('/api/feedback', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ feedbackType, description }),
-      })
-      if (!response.ok) throw new Error('Failed to submit feedback')
-      // Handle successful submission
-    } catch (error) {
-      console.error('Error submitting feedback:', error)
-      // Handle error
+      const newFeedback: FeedbackItem = {
+        type: feedbackType,
+        description: description.trim(),
+        timestamp: new Date().toISOString(),
+        status: 'pending'
+      }
+
+      const existingFeedback: FeedbackItem[] = JSON.parse(localStorage.getItem('feedback') || '[]')
+      localStorage.setItem('feedback', JSON.stringify([...existingFeedback, newFeedback]))
+
+      setStatus('success')
+      setDescription('')
+      setFeedbackType('bug')
+      setError('')
+      setTimeout(() => setStatus('idle'), 3000)
+    } catch (err) {
+      setStatus('error')
+      setError('Failed to save feedback')
     }
   }
 
@@ -73,13 +94,21 @@ export default function FeedbackForm() {
           />
         </div>
 
+        {status === 'error' && (
+          <p className="text-red-500 text-sm">{error}</p>
+        )}
+        {status === 'success' && (
+          <p className="text-green-500 text-sm">Feedback saved successfully!</p>
+        )}
+
         <button
           type="submit"
+          disabled={status === 'loading'}
           className="w-full bg-forest-green text-white py-3 px-6 rounded-lg
                    hover:bg-sage-green transition-colors duration-300
-                   font-medium shadow-sm"
+                   font-medium shadow-sm disabled:opacity-50"
         >
-          Submit Feedback
+          {status === 'loading' ? 'Saving...' : 'Submit Feedback'}
         </button>
       </form>
     </Card>

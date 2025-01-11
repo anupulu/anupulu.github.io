@@ -9,6 +9,7 @@ This repository hosts the code for my personal portfolio website, showcasing my 
 - Sustainable and human-centric color scheme
 - Timeline view for professional journey
 - Structured learning insights with manifesto connections
+- Feedback system with GitHub Issues integration
 
 ## Tech Stack
 
@@ -19,6 +20,14 @@ This repository hosts the code for my personal portfolio website, showcasing my 
 - TypeScript
 - Tailwind CSS
 - Radix UI Components
+
+## Feedback System
+
+### Features
+- Form for collecting bug reports and feature ideas
+- Local storage for offline capability
+- Daily sync to GitHub Issues
+- Automatic status tracking
 
 ## Deployment
 
