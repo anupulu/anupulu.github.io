@@ -66,26 +66,19 @@ export default function Home() {
       />
       {/* Hero Section */}
       <section 
-        className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-sage-green/5 to-muted-terracotta/5"
-        aria-labelledby="hero-heading"
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center py-16">
-          <div 
-            className="inline-block px-4 py-1.5 rounded-full bg-white/50 backdrop-blur-sm text-sage-green mb-6"
-            role="text"
-            aria-label="Location"
-          >
-            Finnish-born tech enthusiast in Switzerland
-          </div>
-          <h1 
-            id="hero-heading"
-            className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight md:leading-tight bg-gradient-to-r from-forest-green to-sage-green bg-clip-text text-transparent"
-          >
-            Digital gardener,<br />
-            growing good
+  className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-sage-green/5 to-muted-terracotta/5"
+  aria-labelledby="hero-heading"
+>
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center py-16">
+    <h1 
+      id="hero-heading"
+      className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight md:leading-tight bg-gradient-to-r from-forest-green to-sage-green bg-clip-text text-transparent"
+    >
+      Digital gardener,<br />
+      growing good
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-text-dark max-w-2xl mx-auto mb-8">
-            Bridging technology and human needs through curiosity, collaboration, 
+          Finnish-born tech enthusiast in Switzerland, bridging technology and human needs through curiosity, collaboration, 
             and conscious innovation.
           </p>
           <Link 
