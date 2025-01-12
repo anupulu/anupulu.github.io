@@ -77,9 +77,10 @@ async function syncFeedback() {
     repo
   });
 
-  if (!token?.startsWith('ghp_')) {
-    console.error('Error: Invalid token format. Token should start with ghp_');
-    console.error('Current token:', token?.substring(0, 10));
+  // Update token validation to accept both formats
+  if (!token.startsWith('ghp_') && !token.startsWith('ghs_')) {
+    console.error('Error: Invalid token format. Token should start with ghp_ or ghs_');
+    console.error('Current token:', token.substring(0, 10));
     process.exit(1);
   }
 
