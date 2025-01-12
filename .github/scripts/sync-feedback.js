@@ -1,22 +1,53 @@
-require('dotenv').config({ path: '.env.local' });
-const { Octokit } = require('@octokit/rest');
-const fs = require('fs');
-const path = require('path');
+import { Octokit } from '@octokit/rest';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import dotenv from 'dotenv';
+
+console.log('\n=== Environment Debug ===');
+
+// Step 1: Clear cache
+delete process.env.GITHUB_ACCESS_TOKEN;
+console.log('1. Cleared env cache');
+
+// Step 2: Read raw file
+const envPath = path.resolve(process.cwd(), '.env.local');
+try {
+  const rawContent = fs.readFileSync(envPath, 'utf8');
+  console.log('2. Raw file content:', rawContent.replace(/ghp_[a-zA-Z0-9]+/g, '[TOKEN]'));
+} catch (err) {
+  console.error('2. File read error:', err);
+}
+
+// Step 3: Load with dotenv
+const config = dotenv.config({ path: envPath });
+console.log('3. Dotenv config result:', config);
+
+// Step 4: Check loaded value
+console.log('4. Loaded token:', {
+  value: process.env.GITHUB_ACCESS_TOKEN?.substring(0, 10),
+  type: typeof process.env.GITHUB_ACCESS_TOKEN
+});
 
 async function syncFeedback() {
-  console.log('Starting sync process...');
+  console.log('\n=== Starting Sync Process ===');
   
   const token = process.env.GITHUB_ACCESS_TOKEN;
   const owner = process.env.GITHUB_REPO_OWNER;
   const repo = process.env.GITHUB_REPO_NAME;
 
-  if (!token || !owner || !repo) {
-    console.error('Error: Required environment variables not set');
-    console.error('Values found:', { 
-      token: token ? 'present' : 'missing',
-      owner: owner || 'missing',
-      repo: repo || 'missing'
-    });
+  console.log('Loaded env variables:', {
+    tokenExists: !!token,
+    tokenPrefix: token?.substring(0, 4) || 'none',
+    tokenLength: token?.length || 0,
+    owner,
+    repo
+  });
+
+  if (!token?.startsWith('ghp_')) {
+    console.error('Error: Invalid token format. Token should start with ghp_');
+    console.error('Current token:', token?.substring(0, 10));
     process.exit(1);
   }
 
@@ -64,6 +95,9 @@ async function syncFeedback() {
     
   } catch (error) {
     console.error('Sync failed:', error);
+    if (error.status === 401) {
+      console.error('Authentication failed. Please check your GitHub token.');
+    }
     process.exit(1);
   }
 }
