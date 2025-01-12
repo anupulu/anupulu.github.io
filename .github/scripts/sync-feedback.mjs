@@ -7,22 +7,25 @@ import dotenv from 'dotenv';
 
 console.log('=== Debug Token Loading ===');
 
-// Load env file
-const envPath = path.resolve(process.cwd(), '.env.local');
-console.log('1. Env file:', {
-  path: envPath,
-  exists: fs.existsSync(envPath)
-});
-
-// Read raw content
-if (fs.existsSync(envPath)) {
-  const content = fs.readFileSync(envPath, 'utf8');
-  console.log('2. Raw content:', content.replace(/ghp_[a-zA-Z0-9]+/g, '[TOKEN]'));
+// Only load .env.local in local development
+if (!process.env.GITHUB_ACTIONS) {
+  const envPath = path.resolve(process.cwd(), '.env.local');
+  console.log('Local development:', {
+    path: envPath,
+    exists: fs.existsSync(envPath)
+  });
+  
+  if (fs.existsSync(envPath)) {
+    dotenv.config({ path: envPath });
+  }
 }
 
-// Load with dotenv
-const result = dotenv.config({ path: envPath });
-console.log('3. Dotenv result:', result);
+console.log('Environment:', {
+  isGitHubActions: !!process.env.GITHUB_ACTIONS,
+  hasToken: !!process.env.GITHUB_ACCESS_TOKEN,
+  hasOwner: !!process.env.GITHUB_REPO_OWNER,
+  hasRepo: !!process.env.GITHUB_REPO_NAME
+});
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
