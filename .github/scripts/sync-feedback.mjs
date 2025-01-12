@@ -5,48 +5,55 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import dotenv from 'dotenv';
 
-if (!process.env.CI) {
-  try {
-    dotenv.config({ path: '.env.local' });
-  } catch (error) {
-    console.log('No .env.local file found, using environment variables');
-  }
+console.log('=== Debug Token Loading ===');
+
+// Load env file
+const envPath = path.resolve(process.cwd(), '.env.local');
+console.log('1. Env file:', {
+  path: envPath,
+  exists: fs.existsSync(envPath)
+});
+
+// Read raw content
+if (fs.existsSync(envPath)) {
+  const content = fs.readFileSync(envPath, 'utf8');
+  console.log('2. Raw content:', content.replace(/ghp_[a-zA-Z0-9]+/g, '[TOKEN]'));
 }
+
+// Load with dotenv
+const result = dotenv.config({ path: envPath });
+console.log('3. Dotenv result:', result);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-console.log('\n=== Environment Debug ===');
-
-// Step 1: Clear cache
-delete process.env.GITHUB_ACCESS_TOKEN;
-console.log('1. Cleared env cache');
-
-// Step 2: Read raw file
-const envPath = path.resolve(process.cwd(), '.env.local');
-try {
-  const rawContent = fs.readFileSync(envPath, 'utf8');
-  console.log('2. Raw file content:', rawContent.replace(/ghp_[a-zA-Z0-9]+/g, '[TOKEN]'));
-} catch (err) {
-  console.error('2. File read error:', err);
-}
-
-// Step 3: Load with dotenv
-const config = dotenv.config({ path: envPath });
-console.log('3. Dotenv config result:', config);
-
-// Step 4: Check loaded value
-console.log('4. Loaded token:', {
-  value: process.env.GITHUB_ACCESS_TOKEN?.substring(0, 10),
-  type: typeof process.env.GITHUB_ACCESS_TOKEN
-});
-
 async function syncFeedback() {
-  console.log('\n=== Starting Sync Process ===');
+  console.log('Starting sync process...');
+  console.log('Environment:', {
+    isGitHubActions: !!process.env.GITHUB_ACTIONS,
+    hasToken: !!process.env.GITHUB_ACCESS_TOKEN
+  });
   
   const token = process.env.GITHUB_ACCESS_TOKEN;
+  console.log('4. Token loaded:', {
+    exists: !!token,
+    prefix: token?.substring(0, 4),
+    length: token?.length
+  });
+
   const owner = process.env.GITHUB_REPO_OWNER;
   const repo = process.env.GITHUB_REPO_NAME;
+
+  console.log('Step 4: Token check:', {
+    exists: !!token,
+    prefix: token?.substring(0, 4),
+    length: token?.length
+  });
+
+  if (!token) {
+    console.error('GitHub token not found');
+    process.exit(1);
+  }
 
   console.log('Loaded env variables:', {
     tokenExists: !!token,
