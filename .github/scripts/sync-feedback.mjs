@@ -5,8 +5,13 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import dotenv from 'dotenv';
 
-// Load environment variables
-dotenv.config({ path: '.env.local' });
+if (!process.env.CI) {
+  try {
+    dotenv.config({ path: '.env.local' });
+  } catch (error) {
+    console.log('No .env.local file found, using environment variables');
+  }
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
