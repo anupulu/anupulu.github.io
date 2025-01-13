@@ -1,5 +1,5 @@
-import * as fs from 'fs'
-import * as path from 'path'
+import fs from 'fs';
+import path from 'path';
 
 interface FeedbackItem {
   type: 'bug' | 'idea';
@@ -17,12 +17,12 @@ const testData: FeedbackItem[] = [
   }
 ];
 
-const dataDir = path.join(process.cwd(), 'data');
-if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir, { recursive: true });
+const feedbackPath = path.join(process.cwd(), 'data', 'feedback.json');
+
+// Create data directory if it doesn't exist
+if (!fs.existsSync(path.dirname(feedbackPath))) {
+  fs.mkdirSync(path.dirname(feedbackPath), { recursive: true });
 }
 
-const feedbackPath = path.join(process.cwd(), 'data', 'feedback.json');
 fs.writeFileSync(feedbackPath, JSON.stringify(testData, null, 2));
-
-console.log('Test data created in data/feedback.json');
+console.log('Created test feedback data');

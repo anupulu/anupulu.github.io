@@ -95,13 +95,22 @@ async function syncFeedback() {
     console.log('Repository access confirmed');
 
     const feedbackPath = path.join(process.cwd(), 'data', 'feedback.json');
-    console.log(`Looking for feedback file at: ${feedbackPath}`);
-    
-    if (!fs.existsSync(feedbackPath)) {
-      console.log('No feedback file found');
-      return;
+    const feedbackDir = path.dirname(feedbackPath);
+
+    // Create data directory if it doesn't exist
+    if (!fs.existsSync(feedbackDir)) {
+      fs.mkdirSync(feedbackDir, { recursive: true });
+      console.log('Created data directory');
     }
 
+    // Initialize feedback.json if it doesn't exist
+    if (!fs.existsSync(feedbackPath)) {
+      fs.writeFileSync(feedbackPath, JSON.stringify([], null, 2));
+      console.log('Initialized empty feedback.json');
+    }
+
+    console.log(`Looking for feedback file at: ${feedbackPath}`);
+    
     const feedback = JSON.parse(fs.readFileSync(feedbackPath, 'utf8'));
     console.log('Current feedback:', feedback);
 
