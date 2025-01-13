@@ -7,30 +7,26 @@ import dotenv from 'dotenv';
 
 console.log('=== Debug Token Loading ===');
 
-// Check environment type
-const isCI = !!process.env.GITHUB_ACTIONS;
-console.log('Environment type:', { isCI });
-
-// Load token based on environment
-const token = isCI ? process.env.GITHUB_TOKEN : process.env.GITHUB_ACCESS_TOKEN;
-console.log('Token source:', { 
-  isCI,
-  fromGitHubToken: !!process.env.GITHUB_TOKEN,
-  fromAccessToken: !!process.env.GITHUB_ACCESS_TOKEN
-});
-
-// Local env loading
-if (!isCI) {
-  const envPath = path.resolve(process.cwd(), '.env.local');
-  console.log('Local development:', {
-    path: envPath,
-    exists: fs.existsSync(envPath)
-  });
-  
-  if (fs.existsSync(envPath)) {
-    dotenv.config({ path: envPath });
-  }
+// Load .env.local first
+const envPath = path.resolve(process.cwd(), '.env.local');
+if (fs.existsSync(envPath)) {
+  dotenv.config({ path: envPath });
+  console.log('Loaded .env.local file');
 }
+
+// Debug token loading
+const token = process.env.GITHUB_ACCESS_TOKEN;
+console.log('Token debug:', {
+  envPath,
+  tokenExists: !!token,
+  tokenPrefix: token?.substring(0, 4),
+  envVars: {
+    GITHUB_ACCESS_TOKEN: !!process.env.GITHUB_ACCESS_TOKEN,
+    GITHUB_TOKEN: !!process.env.GITHUB_TOKEN,
+    GITHUB_REPO_OWNER: process.env.GITHUB_REPO_OWNER,
+    GITHUB_REPO_NAME: process.env.GITHUB_REPO_NAME
+  }
+});
 
 console.log('Environment:', {
   isGitHubActions: !!process.env.GITHUB_ACTIONS,

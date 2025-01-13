@@ -14,6 +14,25 @@ permissions:
   issues: write
 
 jobs:
+  sync-feedback:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm install @octokit/rest dotenv
+      - name: Sync feedback
+        env:
+          GITHUB_TOKEN: ${{ github.token }}  # Use default token
+          GITHUB_REPO_OWNER: anupulu
+          GITHUB_REPO_NAME: anupulu.github.io
+        run: node .github/scripts/sync-feedback.mjs
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -29,26 +48,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-
-  sync-feedback:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install dependencies
-        run: npm install @octokit/rest dotenv
-      - name: Sync feedback
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
-          GITHUB_REPO_OWNER: anupulu
-          GITHUB_REPO_NAME: anupulu.github.io
-        run: node .github/scripts/sync-feedback.mjs
 
   deploy:
     needs: build

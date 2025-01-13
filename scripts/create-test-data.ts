@@ -11,13 +11,7 @@ interface FeedbackItem {
 const testData: FeedbackItem[] = [
   {
     type: 'bug',
-    description: 'Test bug report from local storage',
-    timestamp: new Date().toISOString(),
-    status: 'pending'
-  },
-  {
-    type: 'idea',
-    description: 'Test feature idea from local storage',
+    description: 'Test bug report - Debug sync',
     timestamp: new Date().toISOString(),
     status: 'pending'
   }
@@ -28,7 +22,7 @@ if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
-const feedbackPath = path.join(dataDir, 'feedback.json');
+const feedbackPath = path.join(process.cwd(), 'data', 'feedback.json');
 fs.writeFileSync(feedbackPath, JSON.stringify(testData, null, 2));
 
 console.log('Test data created in data/feedback.json');
