@@ -7,17 +7,19 @@ import dotenv from 'dotenv';
 
 console.log('=== Debug Token Loading ===');
 
-// Load .env.local first
-const envPath = path.resolve(process.cwd(), '.env.local');
-if (fs.existsSync(envPath)) {
-  dotenv.config({ path: envPath });
-  console.log('Loaded .env.local file');
+// Load env file only in local development
+if (!process.env.GITHUB_ACTIONS) {
+  const envPath = path.resolve(process.cwd(), '.env.local');
+  if (fs.existsSync(envPath)) {
+    dotenv.config({ path: envPath });
+  }
 }
 
-// Debug token loading
-const token = process.env.GITHUB_ACCESS_TOKEN;
+// Select token based on environment
+const token = process.env.GITHUB_ACTIONS ? process.env.GITHUB_TOKEN : process.env.GITHUB_ACCESS_TOKEN;
+
 console.log('Token debug:', {
-  envPath,
+  isCI: !!process.env.GITHUB_ACTIONS,
   tokenExists: !!token,
   tokenPrefix: token?.substring(0, 4),
   envVars: {

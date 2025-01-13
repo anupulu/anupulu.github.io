@@ -28,7 +28,7 @@ jobs:
         run: npm install @octokit/rest dotenv
       - name: Sync feedback
         env:
-          GITHUB_TOKEN: ${{ github.token }}  # Use default token
+          GITHUB_TOKEN: ${{ github.token }}
           GITHUB_REPO_OWNER: anupulu
           GITHUB_REPO_NAME: anupulu.github.io
         run: node .github/scripts/sync-feedback.mjs
