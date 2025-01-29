@@ -27,6 +27,19 @@ export default function JourneyPage() {
   const timeline: TimelineItem[] = [
     // 2024 - Present
     {
+      startDate: "Jan 2025",
+      endDate: "Jan 2025",
+      organization: "AI for Connectivity Hackathon",
+      role: "Hackathon Team Member",
+      description: "Handled product management, UX/UI design, AI-assisted frontend development, and creating a presentation for our solution: an AI and blockchain procurement platform to enhance transparency and efficiency in public sector connectivity projects.",
+      category: "beyond-work",
+      details: [
+        "Product management and UX/UI design",
+        "Developed frontend components and first version of user dashboard",
+        "Created and delivered project presentation"
+      ]
+    },
+    {
       startDate: "Nov 2024",
       endDate: "Present",
       organization: "Kiwix",
