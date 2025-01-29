@@ -19,6 +19,33 @@ type Learning = {
 export default function LearningsPage() {
   const learnings: Learning[] = [
     {
+      title: "AI-Enhanced Public Procurement Platform for Connectivity Projects",
+      date: "January 2025",
+      type: "project",
+      description: "With my team, built an MVP of an AI and blockchain-powered platform during an AI for Connectivity Hackathon (hosted by Giga) that transforms public sector procurement processes. Developed innovative solutions to enhance transparency, efficiency, and community engagement in connectivity infrastructure projects. I was in charge of UX/UI, frontend, and preparing the presentation",
+      insights: [
+        "Combining AI and blockchain technologies can create more transparent and efficient public procurement processes.",
+        "Machine learning-driven predictive analytics can significantly improve resource allocation and risk management in infrastructure projects.",
+        "Community engagement through transparent project tracking can lead to better accountability and project outcomes."
+      ],
+      relatedManifestoPrinciples: [
+        "Ethical impact over short-term gains",
+        "Transparency and honesty over opacity",
+        "Collaborative growth over individual success"
+      ],
+      links: [
+        {
+          text: "AI for Connectivity Hackathon",
+          url: "https://lablab.ai/event/ai-for-connectivity-hackathon"
+        },
+        {
+          text: "UniSphere Team Project Page",
+          url: "https://lablab.ai/event/ai-for-connectivity-hackathon/unisphere/ai-powered-procurement-management-system"
+        }
+      ],
+      tags: ["AI", "Blockchain", "Public Sector", "Innovation"]
+    },
+    {
       title: "Creation of Personal Website Using AI Tools",
       date: "December 2024",
       type: "project",
