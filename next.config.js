@@ -1,3 +1,9 @@
-module.exports = {
-  reactStrictMode: true, // Enables React's Strict Mode
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
 };
+
+module.exports = nextConfig;
