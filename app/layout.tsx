@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import FeedbackButton from '@/components/FeedbackButton'
+import { Tracker } from '@/components/analytics/Tracker'
 import { usePathname } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         {pathname !== '/contact/' && <FeedbackButton />}
+        <Tracker />
       </body>
     </html>
   )
