@@ -21,14 +21,6 @@ This repository hosts the code for my personal portfolio website, showcasing my 
 - Tailwind CSS
 - Radix UI Components
 
-## Feedback System
-
-### Features
-- Form for collecting bug reports and feature ideas
-- Local storage for offline capability
-- Daily sync to GitHub Issues
-- Automatic status tracking
-
 ## Deployment
 
 This site is configured for deployment on GitHub Pages. To deploy:
