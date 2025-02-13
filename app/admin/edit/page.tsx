@@ -288,7 +288,7 @@ function EditPageContent() {
               Edit {slug}
             </h1>
             <p className="text-text-dark/70">
-              Make changes to your content and click Save when you're done.
+              Make changes to your content and click Save when you are done.
             </p>
           </div>
           <button
