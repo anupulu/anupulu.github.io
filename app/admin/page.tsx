@@ -19,7 +19,7 @@ export default function AdminPage() {
   const handleLogin = () => {
     const clientId = process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID
     // Always use localhost:3000 in development
-    const redirectUri = 'http://localhost:3000/api/auth/callback'
+    const redirectUri = 'http://anupulu.github.io/api/auth/callback'
     
     // Log the values for debugging
     console.log('Environment:', process.env.NODE_ENV)
