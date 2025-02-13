@@ -5,6 +5,12 @@ import { allLearnings } from '.contentlayer/generated'
 import { compareDesc, format } from 'date-fns'
 import Link from 'next/link'
 
+// Define the FrontMatter interface
+interface FrontMatter {
+  relatedManifestoPrinciples?: string[]; // Optional array
+  // Add other properties as needed
+}
+
 export default function LearningsPage() {
   const sortedLearnings = allLearnings.sort((a, b) => 
     compareDesc(new Date(a.date), new Date(b.date))

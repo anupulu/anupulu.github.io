@@ -406,7 +406,7 @@ function EditPageContent() {
                     </div>
                   ))}
                 </div>
-                {frontMatter.relatedManifestoPrinciples?.length > 0 && (
+                {(frontMatter.relatedManifestoPrinciples?.length || 0) > 0 && (
                   <div className="pt-3 mt-3 border-t">
                     <button
                       onClick={() => setFrontMatter({
