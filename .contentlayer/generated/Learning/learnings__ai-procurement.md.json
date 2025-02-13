@@ -1,0 +1,46 @@
+{
+  "title": "AI-Enhanced Public Procurement Platform",
+  "date": "2024-01-30T00:00:00.000Z",
+  "category": "project",
+  "description": "With my team, built an MVP of an AI and blockchain-powered platform for transparent and efficient public procurement processes.",
+  "insights": [
+    "Combining AI and blockchain technologies can create more transparent procurement processes",
+    "Machine learning can improve resource allocation in public sector",
+    "Public sector innovation requires careful balance of efficiency and accountability",
+    "Cross-functional teams enable comprehensive problem-solving in complex domains"
+  ],
+  "relatedManifestoPrinciples": [
+    "Ethical impact over short-term gains",
+    "Transparency and honesty over opacity"
+  ],
+  "tags": [
+    "AI",
+    "Blockchain",
+    "Public Sector",
+    "Hackathon"
+  ],
+  "relatedLinks": [
+    {
+      "name": "AI for Connectivity Hackathon",
+      "url": "https://lablab.ai/event/ai-for-connectivity-hackathon"
+    },
+    {
+      "name": "Unisphere Team Project Page",
+      "url": "https://lablab.ai/event/ai-for-connectivity-hackathon/unisphere/ai-powered-procurement-management-system"
+    }
+  ],
+  "body": {
+    "raw": "\nBuilt an AI and blockchain-powered platform for transparent and efficient public procurement processes during the AI for Connectivity Hackathon. The solution aimed to reduce corruption and improve resource allocation in public sector procurement.\n\nKey features included automated bid evaluation, fraud detection, and transparent audit trails. The platform demonstrated how emerging technologies can be leveraged to serve public good while maintaining accountability.",
+    "html": "<p>Built an AI and blockchain-powered platform for transparent and efficient public procurement processes during the AI for Connectivity Hackathon. The solution aimed to reduce corruption and improve resource allocation in public sector procurement.</p>\n<p>Key features included automated bid evaluation, fraud detection, and transparent audit trails. The platform demonstrated how emerging technologies can be leveraged to serve public good while maintaining accountability.</p>"
+  },
+  "_id": "learnings/ai-procurement.md",
+  "_raw": {
+    "sourceFilePath": "learnings/ai-procurement.md",
+    "sourceFileName": "ai-procurement.md",
+    "sourceFileDir": "learnings",
+    "contentType": "markdown",
+    "flattenedPath": "learnings/ai-procurement"
+  },
+  "type": "Learning",
+  "slug": "ai-procurement"
+}

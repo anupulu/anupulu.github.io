@@ -1,0 +1,33 @@
+{
+  "title": "Kiwix Offline Wikipedia",
+  "date": "2024-01-20T00:00:00.000Z",
+  "category": "volunteering",
+  "description": "Contributing to Kiwix, making knowledge accessible offline to millions.",
+  "insights": [
+    "Open source contributions can have global impact",
+    "Technical solutions can bridge digital divides"
+  ],
+  "relatedManifestoPrinciples": [
+    "Knowledge accessibility",
+    "Community impact"
+  ],
+  "tags": [
+    "Open Source",
+    "Knowledge Access",
+    "Volunteering"
+  ],
+  "body": {
+    "raw": "",
+    "html": ""
+  },
+  "_id": "learnings/kiwix.md",
+  "_raw": {
+    "sourceFilePath": "learnings/kiwix.md",
+    "sourceFileName": "kiwix.md",
+    "sourceFileDir": "learnings",
+    "contentType": "markdown",
+    "flattenedPath": "learnings/kiwix"
+  },
+  "type": "Learning",
+  "slug": "kiwix"
+}

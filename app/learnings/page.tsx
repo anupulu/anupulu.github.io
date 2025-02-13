@@ -1,141 +1,14 @@
 'use client'
 
 import { Card } from "@/components/ui/card"
-
-type Learning = {
-  title: string
-  date: string
-  type: 'project' | 'volunteering' | 'reflection'
-  description: string
-  insights: string[]
-  relatedManifestoPrinciples: string[]
-  links?: {
-    text: string
-    url: string
-  }[]
-  tags: string[]
-}
+import { allLearnings } from '.contentlayer/generated'
+import { compareDesc, format } from 'date-fns'
+import Link from 'next/link'
 
 export default function LearningsPage() {
-  const learnings: Learning[] = [
-    {
-      title: "AI-Enhanced Public Procurement Platform for Connectivity Projects",
-      date: "January 2025",
-      type: "project",
-      description: "With my team, built an MVP of an AI and blockchain-powered platform during an AI for Connectivity Hackathon (hosted by Giga) that transforms public sector procurement processes. Developed innovative solutions to enhance transparency, efficiency, and community engagement in connectivity infrastructure projects. I was in charge of UX/UI, frontend, and preparing the presentation",
-      insights: [
-        "Combining AI and blockchain technologies can create more transparent and efficient public procurement processes.",
-        "Machine learning-driven predictive analytics can significantly improve resource allocation and risk management in infrastructure projects.",
-        "Community engagement through transparent project tracking can lead to better accountability and project outcomes."
-      ],
-      relatedManifestoPrinciples: [
-        "Ethical impact over short-term gains",
-        "Transparency and honesty over opacity",
-        "Collaborative growth over individual success"
-      ],
-      links: [
-        {
-          text: "AI for Connectivity Hackathon",
-          url: "https://lablab.ai/event/ai-for-connectivity-hackathon"
-        },
-        {
-          text: "UniSphere Team Project Page",
-          url: "https://lablab.ai/event/ai-for-connectivity-hackathon/unisphere/ai-powered-procurement-management-system"
-        }
-      ],
-      tags: ["AI", "Blockchain", "Public Sector", "Innovation"]
-    },
-    {
-      title: "Creation of Personal Website Using AI Tools",
-      date: "December 2024",
-      type: "project",
-      description: "Built this personal website using AI tools such as Claude.ai and Cursor AI coding assistant. Leveraged these tools to streamline the development process, enhance productivity, and implement design best practices.",
-      insights: [
-        "AI tools can significantly accelerate the web development process.",
-        "Combining multiple AI tools can create a more efficient and streamlined workflow.",
-        "Using AI for coding assistance can empower those who are less technical or are lacking coding skills."
-      ],
-      relatedManifestoPrinciples: [
-        "Continuous learning over stagnation"
-      ],
-      links: [
-        {
-          text: "Claude.ai Official Website",
-          url: "https://www.claude.ai"
-        },
-        {
-          text: "Cursor AI Coding Assistant",
-          url: "https://www.cursor.com"
-        }
-      ],
-      tags: ["AI", "Web Development", "Productivity", "Innovation"]
-    },
-    {
-      title: "#herHACK 2024: Sustainability Challenge",
-      date: "November 2024",
-      type: "project",
-      description: "Participated in #herHACK hackathon, where our team won 2nd place by developing a solution for SBB's sustainability challenge. The experience was both as a participant and volunteer, providing insights on rapid innovation and community building.",
-      insights: [
-        "Cross-functional teams can rapidly innovate when given clear constraints and support",
-        "Sustainability in tech requires balancing immediate user needs with long-term environmental impact",
-        "Volunteering provides valuable perspective on event organization and community building",
-        "Diverse teams bring richer solutions through varied viewpoints and experiences"
-      ],
-      relatedManifestoPrinciples: [
-        "Ethical impact over short-term gains",
-        "Diverse perspectives over homogeneous thinking",
-        "Collaborative growth over individual success"
-      ],
-      links: [
-        {
-          text: "My LinkedIn post about #herHACK 2024 experience",
-          url: "https://www.linkedin.com/posts/anujohanna_herhack-innovation-hackathon-activity-7258807431072301056-BYtF/"
-        },
-        {
-          text: "#herHACK 2024 highlights by Jochen Decker",
-          url: "https://www.linkedin.com/posts/jochen-decker-62526241_herhack-herhack2024-womenintech-activity-7264570164761841665-UXZ2/"
-        }
-      ],
-      tags: ["Hackathon", "Sustainability", "Innovation", "Volunteering"]
-    },
-    {
-      title: "Kiwix: Making Knowledge Accessible",
-      date: "2024 - Present",
-      type: "volunteering",
-      description: "Volunteering with Kiwix to support their mission of making knowledge accessible to everyone, regardless of internet connectivity.",
-      insights: [
-        "Technology can bridge educational gaps when designed thoughtfully",
-        "Offline solutions remain crucial for global accessibility",
-        "Open-source communities drive meaningful innovation",
-        "User needs vary significantly across different regions and contexts"
-      ],
-      relatedManifestoPrinciples: [
-        "Human-centered design over pure technological advancement",
-        "Sustainable solutions over quick fixes",
-        "Empathy and understanding over assumptions"
-      ],
-      links: [
-        {
-          text: "Kiwix Official Website",
-          url: "https://kiwix.org/"
-        }
-      ],
-      tags: ["Open Source", "Education", "Accessibility", "Volunteering"]
-    }
-  ]
-
-  const getTypeIcon = (type: Learning['type']) => {
-    switch (type) {
-      case 'project':
-        return '🚀'
-      case 'volunteering':
-        return '🤝'
-      case 'reflection':
-        return '💭'
-      default:
-        return '📚'
-    }
-  }
+  const sortedLearnings = allLearnings.sort((a, b) => 
+    compareDesc(new Date(a.date), new Date(b.date))
+  )
 
   return (
     <main className="min-h-screen">
@@ -143,90 +16,45 @@ export default function LearningsPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-forest-green">
-              Learnings & Insights
+              Learnings
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-text-dark max-w-2xl mx-auto">
-              A collection of experiences and insights from my journey, connecting practical learnings 
-              with my core principles and values.
+              Documenting my journey, insights, and growth through various projects and experiences.
             </p>
           </div>
         </div>
       </section>
 
-      <section 
-        className="max-w-4xl mx-auto px-4 sm:px-6 py-16"
-        aria-labelledby="learnings-heading"
-      >
-        <h2 id="learnings-heading" className="sr-only">All Learnings</h2>
-        <div className="space-y-12">
-          {learnings.map((learning, index) => (
-            <Card key={index} className="p-8 bg-white/80 backdrop-blur-sm">
-              <div className="space-y-6">
-                {/* Header */}
-                <div>
-                  <div className="text-sm text-sage-green mb-2">{learning.date}</div>
-                  <h2 className="text-2xl font-bold text-forest-green mb-4">{learning.title}</h2>
-                  <p className="text-text-dark">{learning.description}</p>
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {learning.tags.map((tag, tagIndex) => (
-                    <span 
-                      key={tagIndex}
-                      className="px-3 py-1 bg-sage-green/10 text-sage-green rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Key Insights */}
-                <div>
-                  <h3 className="font-semibold text-forest-green mb-3">Key Insights</h3>
-                  <ul className="list-disc list-inside space-y-2 text-text-dark">
-                    {learning.insights.map((insight, insightIndex) => (
-                      <li key={insightIndex}>{insight}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Related Manifesto Principles */}
-                <div>
-                  <h3 className="font-semibold text-forest-green mb-3">Related Personal Manifesto Principles</h3>
-                  <div className="space-y-2">
-                    {learning.relatedManifestoPrinciples.map((principle, principleIndex) => (
-                      <div
-                        key={principleIndex}
-                        className="p-3 bg-sage-green/10 text-forest-green rounded-lg border border-sage-green/20"
-                      >
-                        {principle}
-                      </div>
-                    ))}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sortedLearnings.map((learning) => (
+            <Link href={`/learnings/${learning.slug}`} key={learning.slug}>
+              <Card className="group p-6 h-full border border-gray-100 hover:border-forest-green transition-all duration-200">
+                <div className="flex flex-col h-full">
+                  <h2 className="text-xl font-semibold mb-2 text-forest-green group-hover:text-forest-green/80 transition-colors">
+                    {learning.title}
+                  </h2>
+                  <div className="text-sm text-text-dark/70 mb-2">
+                    {format(new Date(learning.date), 'MMMM d, yyyy')}
                   </div>
-                </div>
-
-                {/* Related Links */}
-                {learning.links && learning.links.length > 0 && (
-                  <div>
-                    <h3 className="font-semibold text-forest-green mb-3">Related Links</h3>
-                    <div className="space-y-2">
-                      {learning.links.map((link, linkIndex) => (
-                        <a
-                          key={linkIndex}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block p-3 bg-sage-green/10 text-forest-green rounded-lg hover:bg-sage-green/20 transition-colors"
+                  <p className="text-text-dark mb-4 line-clamp-3">
+                    {learning.description}
+                  </p>
+                  <div className="mt-auto">
+                    <div className="flex flex-wrap gap-2">
+                      {learning.tags.map((tag) => (
+                        <span 
+                          key={tag} 
+                          className="bg-sage-green/10 text-forest-green px-2 py-1 rounded-full text-sm"
                         >
-                          {link.text}
-                        </a>
+                          {tag}
+                        </span>
                       ))}
                     </div>
                   </div>
-                )}
-              </div>
-            </Card>
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </section>

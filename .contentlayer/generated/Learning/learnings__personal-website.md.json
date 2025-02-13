@@ -1,0 +1,33 @@
+{
+  "title": "Building My Digital Garden",
+  "date": "2024-02-05T00:00:00.000Z",
+  "category": "project",
+  "description": "Creating a personal website to share learnings and document my journey.",
+  "insights": [
+    "Public learning encourages accountability",
+    "Documentation helps solidify understanding"
+  ],
+  "relatedManifestoPrinciples": [
+    "Learning in public",
+    "Continuous improvement"
+  ],
+  "tags": [
+    "Next.js",
+    "Web Development",
+    "Documentation"
+  ],
+  "body": {
+    "raw": "",
+    "html": ""
+  },
+  "_id": "learnings/personal-website.md",
+  "_raw": {
+    "sourceFilePath": "learnings/personal-website.md",
+    "sourceFileName": "personal-website.md",
+    "sourceFileDir": "learnings",
+    "contentType": "markdown",
+    "flattenedPath": "learnings/personal-website"
+  },
+  "type": "Learning",
+  "slug": "personal-website"
+}

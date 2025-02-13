@@ -1,0 +1,33 @@
+{
+  "title": "herHACK 2024: Building Better Future of Work",
+  "date": "2024-01-27T00:00:00.000Z",
+  "category": "project",
+  "description": "Achieved 2nd place in herHACK 2024, developing an AI-powered solution for the future of work.",
+  "insights": [
+    "Rapid prototyping and clear communication are crucial in hackathons",
+    "AI can significantly improve workplace efficiency and satisfaction"
+  ],
+  "relatedManifestoPrinciples": [
+    "Impact through collaboration",
+    "Learning in public"
+  ],
+  "tags": [
+    "Hackathon",
+    "AI",
+    "Future of Work"
+  ],
+  "body": {
+    "raw": "",
+    "html": ""
+  },
+  "_id": "learnings/herhack-2024.md",
+  "_raw": {
+    "sourceFilePath": "learnings/herhack-2024.md",
+    "sourceFileName": "herhack-2024.md",
+    "sourceFileDir": "learnings",
+    "contentType": "markdown",
+    "flattenedPath": "learnings/herhack-2024"
+  },
+  "type": "Learning",
+  "slug": "herhack-2024"
+}
