@@ -7,19 +7,49 @@ import { allLearnings } from '.contentlayer/generated'
 import { format } from 'date-fns'
 import Link from 'next/link'
 
+const allowedUsers = ['anupulu'] // Replace with your GitHub username
+
 export default function AdminPage() {
   const router = useRouter()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const token = localStorage.getItem('github_token')
     setIsAuthenticated(!!token)
+
+    // Function to check if the user is authorized
+    const checkUserAuthorization = async () => {
+      // Fetch the user's GitHub profile information
+      const response = await fetch('https://api.github.com/user', {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`, // Assuming you store the access token in localStorage
+        },
+      });
+
+      if (response.ok) {
+        const user = await response.json();
+        if (allowedUsers.includes(user.login)) {
+          // User is authorized, proceed to show admin content
+          setLoading(false)
+        } else {
+          // User is not authorized, redirect or show an error
+          window.location.href = '/access-denied'; // Redirect to an access denied page
+        }
+      } else {
+        // Handle error (e.g., token expired, unauthorized)
+        console.error('Failed to fetch user data');
+        window.location.href = '/access-denied'; // Redirect on error
+      }
+    };
+
+    checkUserAuthorization();
   }, [])
 
   const handleLogin = () => {
     const clientId = process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID
     // Always use localhost:3000 in development
-    const redirectUri = 'http://anupulu.github.io/api/auth/callback'
+    const redirectUri = 'https://anupulu.github.io/api/auth/callback'
     
     // Log the values for debugging
     console.log('Environment:', process.env.NODE_ENV)
@@ -27,6 +57,10 @@ export default function AdminPage() {
     console.log('Redirect URI:', redirectUri)
     
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=repo`
+  }
+
+  if (loading) {
+    return <div>Loading...</div>; // Show loading state
   }
 
   if (!isAuthenticated) {
