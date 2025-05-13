@@ -54,7 +54,7 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section - Super concise */}
       <section className="relative bg-gradient-to-r from-sage-green/5 to-muted-terracotta/5 py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center">
@@ -62,13 +62,13 @@ export default function AboutPage() {
               About Me
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-text-dark max-w-2xl mx-auto">
-              Product Manager and tech generalist with 15+ years in tech, including 8+ years scaling Batmaid from Swiss startup to international company. Driven by making technology accessible and beneficial for all, I balance professional expertise with commitment to impact-focused initiatives like Kiwix (offline knowledge access) and #herHACK (Switzerland's largest female-led hackathon). Recently won an "AI for connectivity" hackathon organised by Giga, Unicef and ITU. Always open to discuss initiatives where my generalist tech and product skills can create meaningful societal impact through continuous learning.
+              Product Manager and tech generalist with 15+ years in tech, including 8+ years scaling Batmaid from Swiss startup to international company. Driven by making technology accessible and beneficial for all.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Professional Snapshot */}
+      {/* Professional Snapshot - Expanded details */}
       <section 
         className="max-w-4xl mx-auto px-4 sm:px-6 py-16"
         aria-labelledby="snapshot-heading"
