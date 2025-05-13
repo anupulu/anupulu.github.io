@@ -27,6 +27,20 @@ export default function JourneyPage() {
   const timeline: TimelineItem[] = [
     // 2024 - Present
     {
+      startDate: "May 2025",
+      endDate: "Present",
+      organization: "Kiwix",
+      role: "Part-time Product Manager",
+      description: "Leading product development for the Kiwix Hotspot device and other mission-aligned solutions, focusing on making knowledge accessible offline in areas with limited internet access.",
+      category: "work",
+      details: [
+        "Leading product development for the Kiwix Hotspot device",
+        "Managing product roadmap and feature prioritization",
+        "Collaborating with cross-functional teams to deliver mission-aligned solutions",
+        "Contributing to strategic decisions for product development"
+      ]
+    },
+    {
       startDate: "Jan 2025",
       endDate: "Jan 2025",
       organization: "AI for Connectivity Hackathon",
@@ -41,7 +55,7 @@ export default function JourneyPage() {
     },
     {
       startDate: "Nov 2024",
-      endDate: "Present",
+      endDate: "Apr 2025",
       organization: "Kiwix",
       role: "Volunteer",
       description: "Supporting Kiwix to make knowledge accessible offline, contributing to their mission of bringing educational content to areas with limited internet access.",
