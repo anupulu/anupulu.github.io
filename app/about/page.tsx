@@ -62,8 +62,7 @@ export default function AboutPage() {
               About Me
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-text-dark max-w-2xl mx-auto">
-              Product leader with a passion for creating meaningful, user-centered experiences 
-              through thoughtful service design and data-driven insights.
+              Product Manager and tech generalist with 15+ years in tech, including 8+ years scaling Batmaid from Swiss startup to international company. Driven by making technology accessible and beneficial for all, I balance professional expertise with commitment to impact-focused initiatives like Kiwix (offline knowledge access) and #herHACK (Switzerland's largest female-led hackathon). Recently won an "AI for connectivity" hackathon organised by Giga, Unicef and ITU. Always open to discuss initiatives where my generalist tech and product skills can create meaningful societal impact through continuous learning.
             </p>
           </div>
         </div>
@@ -82,24 +81,13 @@ export default function AboutPage() {
         </h2>
         <div className="prose prose-lg text-text-dark max-w-none space-y-6">
           <p>
-            I've spent the last 8+ years navigating the world of technology-enabled home cleaning services at Batmaid - 
-            a small startup that evolved into an international scaleup. Along the way, I've learned how to create meaningful, 
-            user-centered experiences by combining data insights with thoughtful service design. I'm adaptable with various 
-            product-led approaches and frameworks (and always eager to learn new ones) and genuinely enjoy collaborating 
-            across teams to make things happen. I thrive in environments where growth is driven from the ground up, in a 
-            collaborative and learning-focused way.
+            With over 15 years in technology and 8+ years at Batmaid, I've experienced firsthand the transformative power of technology when it's built with purpose and accessibility in mind. My journey from helping scale a Swiss startup to an international company has taught me the importance of balancing technical expertise with human-centered design.
           </p>
           <p>
-            Integrity and ethics are non-negotiable for me—both in work and life. That's why I have volunteered with 
-            projects like #herHACK and Kiwix, which align with my belief that tech should benefit everyone, not just 
-            the privileged. I'm driven by a curiosity to figure out how things work and how they can work better. 
-            What excites me most is being part of projects that actually improve lives. Whether it's a big idea or a 
-            small tweak, I'm here for the work that makes a difference, not just a headline.
+            My commitment to making technology accessible to all extends beyond my professional work. Through initiatives like Kiwix, where I contribute to making knowledge available offline, and #herHACK, Switzerland's largest female-led hackathon, I actively work to bridge the digital divide and promote inclusivity in tech.
           </p>
           <p>
-            My journey has been non-linear – a reflection of my adaptability and commitment to continuous learning. 
-            Each role has been a meaningful step, helping me grow and find new ways to create positive change. I'm 
-            driven by curiosity and a desire to make a genuine impact, always willing to evolve and take on new challenges.
+            My recent win at the "AI for connectivity" hackathon organized by Giga, Unicef, and ITU demonstrates my ability to apply technical skills to solve real-world challenges. I'm particularly interested in roles that combine my generalist tech and product expertise with opportunities to create meaningful societal impact through continuous learning and collaboration.
           </p>
         </div>
       </section>
