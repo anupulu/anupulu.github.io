@@ -12,7 +12,7 @@ export default function Home() {
     },
     {
       title: "Where I Am Now",
-      description: "Taking time to learn, grow, and give back. Volunteering at a non-profit, tech events, achieving 2nd place in #herHACK with my team, and exploring new skills through courses and community engagement.",
+      description: "Taking time to learn, grow, and give back. Now working part-time at Kiwix, a non-profit bringing access to knowledge to those without internet connection. Recently participated and won hackathons, joined the Climatebase Fellowship, and explored new skills through courses and community engagement.",
       colorClass: "text-sage-green"
     },
     {
