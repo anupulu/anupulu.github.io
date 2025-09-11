@@ -7,17 +7,17 @@ export default function Home() {
   const keyAreas = [
     {
       title: "My Journey So Far",
-      description: "Built products and features that helped Batmaid combat undeclared domestic cleaning work, growing from Swiss roots into a multi-country European scaleup.",
+      description: "I helped Batmaid grow from a Swiss startup to a European-scale business, building products and features to address undeclared domestic work. My career has focused on creating practical, user-centric solutions that drive both business growth and social impact.",
       colorClass: "text-muted-terracotta"
     },
     {
       title: "Where I Am Now",
-      description: "Taking time to learn, grow, and give back. Now working part-time at Kiwix, a non-profit bringing access to knowledge to those without internet connection. Recently participated and won hackathons, joined the Climatebase Fellowship, and explored new skills through courses and community engagement.",
+      description: "I currently work part-time at Kiwix, a non-profit that provides offline access to knowledge for people without internet. Alongside this, I contribute to the Wikimedia movement, helping make free knowledge more accessible. Recently, I’ve also won hackathons, completed the Climatebase Fellowship, and expanded my skills through courses and community projects.",
       colorClass: "text-sage-green"
     },
     {
       title: "What Drives Me",
-      description: "Seeking my next mission where I can create sustainable, ethical technology solutions that make a meaningful impact on society.",
+      description: "I’m looking for my next opportunity to build ethical, sustainable technology that solves real-world problems and benefits society. I want to work with organisations that share my commitment to open access, knowledge equity, and positive social change.",
       colorClass: "text-forest-green"
     }
   ];
@@ -25,35 +25,35 @@ export default function Home() {
   const manifestoItems = [
     {
       principle: "Ethical impact over short-term gains",
-      description: "I prioritise long-term societal benefits over quick wins."
+      description: "I focus on creating long-term societal value, especially through technology that promotes open access, equity, and sustainability"
     },
     {
       principle: "Responsible innovation over unchecked progress",
-      description: "I believe in advancing technology thoughtfully, considering potential consequences in a holistic manner."
+      description: "I believe technology should be developed thoughtfully and inclusively, ensuring it benefits everyone and doesn’t create new barriers."
     },
     {
       principle: "Human-centered design over pure technological advancement",
-      description: "My focus is on creating solutions that truly serve people's needs - especially those less privileged than me."
+      description: "I design solutions that address real human needs, particularly for underserved communities, ensuring technology is accessible and meaningful."
     },
     {
       principle: "Continuous learning over stagnation",
-      description: "I'm committed to personal growth and staying current in a rapidly evolving field."
+      description: "I’m committed to growing my skills and knowledge, staying adaptable in a fast-changing world, and contributing to communities that share my values."
     },
     {
       principle: "Diverse perspectives over homogeneous thinking",
-      description: "I value and seek out varied viewpoints to drive better solutions."
+      description: "I actively seek out different viewpoints and experiences to create better, more inclusive solutions."
     },
     {
       principle: "Transparency and honesty over opacity",
-      description: "I communicate openly and honestly, building trust through clear and transparent processes."
+      description: "I value open communication and trust, ensuring clarity in everything I do."
     },
     {
       principle: "Empathy and understanding over assumptions",
-      description: "I dedicate time to truly understanding user needs and contexts, ensuring the solutions I design are grounded in real human experiences."
+      description: "I prioritize deeply understanding users and their contexts, so the solutions I create are grounded in real needs."
     },
     {
       principle: "Collaborative growth over individual success",
-      description: "I believe in the power of teamwork and shared achievements."
+      description: "I believe in the power of teamwork and shared achievements, especially when working toward a common mission."
     }
   ];
 
@@ -78,8 +78,7 @@ export default function Home() {
       growing good
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-text-dark max-w-2xl mx-auto mb-8">
-          Finnish-born tech enthusiast in Switzerland, bridging technology and human needs through curiosity, collaboration, 
-            and conscious innovation.
+          Finnish-born product & tech generalist in Switzerland, building ethical technology that bridges gaps in knowledge access and empowers underserved communities.
           </p>
           <Link 
             href="/about"

@@ -27,6 +27,14 @@ export default function JourneyPage() {
   const timeline: TimelineItem[] = [
     // 2024 - Present
     {
+      startDate: "Sep 2025",
+      endDate: "Present",
+      organization: "ECOnGOOD Association",
+      role: "Member",
+      description: "Active member of ECOnGOOD, supporting the Economy for the Common Good (ECG) movement in Switzerland. I contribute to initiatives that promote ethical business practices, sustainability, and a more equitable economy.",
+      category: "beyond-work"
+    },
+    {
       startDate: "May 2025",
       endDate: "Present",
       organization: "Kiwix",
@@ -52,6 +60,14 @@ export default function JourneyPage() {
         "Developed frontend components and first version of user dashboard",
         "Created and delivered project presentation"
       ]
+    },
+    {
+      startDate: "Nov 2024",
+      endDate: "Present",
+      organization: "Wikimedia Projects",
+      role: "Contributor",
+      description: "Reconnected with the Wikimedia movement as an editor and translator, building on my early involvement in Wikipedia’s formative years. I contribute to making free knowledge more accessible and inclusive, supporting the mission of open information for everyone.",
+      category: "beyond-work"
     },
     {
       startDate: "Nov 2024",

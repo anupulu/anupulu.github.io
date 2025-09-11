@@ -12,27 +12,27 @@ export default function AboutPage() {
   const skills: Skill[] = [
     {
       title: "Product Leadership",
-      description: "Led product development initiatives at Batmaid, using agile methodologies, OKRs, data, and user feedback to achieve business goals and deliver impactful outcomes."
+      description: "Drove product development at Batmaid, using agile methodologies, user feedback, and data to deliver scalable, user-centric solutions. At Kiwix, I aligned product strategy with the mission of knowledge equity and accessibility."
     },
     {
-      title: "Service Design",
-      description: "Reimagined entire service ecosystems, looking beyond UX to optimize end-to-end workflows for +10,000 clients and internal operational and administrative teams. For example: recruitment and payroll processes."
+      title: "Service and System Design",
+      description: "Redesigned service ecosystems to optimize workflows for 10,000+ users, including clients and operational teams. Focused on creating inclusive, human-centered solutions that bridge technology and real-world needs."
     },
     {
-      title: "Agile Expertise",
-      description: "Implemented iterative development approaches, reducing project cycles and increasing team responsiveness through continuous improvement methodologies."
+      title: "Agile and Iterative Development",
+      description: "Implemented iterative approaches to reduce project cycles and improve team responsiveness. Applied continuous improvement methodologies to enhance product quality and impact."
+    },
+    {
+      title: "Data-Informed, Evidence-Based Decision Making",
+      description: "Collaborated with cross-functional teams to extract insights from data and user research. Used evidence-based analysis to inform product strategy, prioritize high-impact initiatives, and measure societal benefit."
     },
     {
       title: "User-Centric Innovation",
-      description: "Led the development of comprehensive digital solutions that simplify complex service interactions, bridging technological capabilities with human needs."
+      description: "Developed digital solutions that simplify complex interactions, ensuring technology serves diverse user needs—especially in low-connectivity and underserved contexts."
     },
     {
-      title: "Data-Informed Decision Making",
-      description: "Collaborated with design, data, and engineering to extract key insights from data and user research, mapping opportunity solution spaces to inform product strategy and prioritize high-impact initiatives."
-    },
-    {
-      title: "Empathetic Collaboration",
-      description: "Built inclusive team environments that foster psychological safety, encourage knowledge sharing, and drive collective innovation."
+      title: "Collaborative and Ethical Leadership",
+      description: "Built inclusive, psychologically safe team environments that encourage knowledge sharing and collective innovation. Committed to transparency, empathy, and ethical practices in all projects."
     }
   ]
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
               About Me
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-text-dark max-w-2xl mx-auto">
-              Product Manager and tech generalist with 15+ years in tech, including 8+ years scaling Batmaid from Swiss startup to international company. Driven by making technology accessible and beneficial for all.
+            Product Manager with 15+ years in tech, including 8 years scaling Batmaid from a Swiss startup to a European business. Now focused on building accessible, ethical technology that creates meaningful societal impact.
             </p>
           </div>
         </div>
@@ -81,13 +81,13 @@ export default function AboutPage() {
         </h2>
         <div className="prose prose-lg text-text-dark max-w-none space-y-6">
           <p>
-            With over 15 years in technology and 8+ years at Batmaid, I've experienced firsthand the transformative power of technology when it's built with purpose and accessibility in mind. My journey from helping scale a Swiss startup to an international company has taught me the importance of balancing technical expertise with human-centered design.
+          I’m a product manager with over 15 years of experience in technology, including 8 years at Batmaid, where I helped scale the company from a Swiss startup to a European business. Currently, I work part-time at Kiwix, a non-profit focused on providing offline access to knowledge for people without internet.
           </p>
           <p>
-            My commitment to making technology accessible to all extends beyond my professional work. Through initiatives like Kiwix, where I contribute to making knowledge available offline, and #herHACK, Switzerland's largest female-led hackathon, I actively work to bridge the digital divide and promote inclusivity in tech.
+          My career has centered on creating practical, user-focused technology that addresses real-world challenges. I’ve contributed to open-source projects, participated in hackathons like the Giga/UNICEF “AI for Connectivity” challenge, and completed the Climatebase Fellowship to deepen my understanding of climate solutions.
           </p>
           <p>
-            My recent win at the "AI for connectivity" hackathon organized by Giga, Unicef, and ITU demonstrates my ability to apply technical skills to solve real-world challenges. I'm particularly interested in roles that combine my generalist tech and product expertise with opportunities to create meaningful societal impact through continuous learning and collaboration.
+          I’m now seeking roles where I can combine my product management skills, open-source experience, and passion for knowledge equity to build ethical, sustainable technology that benefits society.
           </p>
         </div>
       </section>
