@@ -32,7 +32,7 @@ export default function Home() {
       description: "I believe technology should be developed thoughtfully and inclusively, ensuring it benefits everyone and doesn’t create new barriers."
     },
     {
-      principle: "Human-centered design over pure technological advancement",
+      principle: "Human-centred design over pure technological advancement",
       description: "I design solutions that address real human needs, particularly for underserved communities, ensuring technology is accessible and meaningful."
     },
     {
@@ -49,11 +49,11 @@ export default function Home() {
     },
     {
       principle: "Empathy and understanding over assumptions",
-      description: "I prioritize deeply understanding users and their contexts, so the solutions I create are grounded in real needs."
+      description: "I prioritise deeply understanding users and their contexts, so the solutions I create are grounded in real needs."
     },
     {
       principle: "Collaborative growth over individual success",
-      description: "I believe in the power of teamwork and shared achievements, especially when working toward a common mission."
+      description: "I believe in the power of teamwork and shared achievements, especially when working towards a common mission."
     }
   ];
 
